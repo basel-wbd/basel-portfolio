@@ -255,6 +255,12 @@ export interface Achievement {
 
 export const achievements: Achievement[] = [
   {
+    title: "Dean's List Award",
+    detail:
+      "Achieved Dean's List status in Fall 2025 semester (First semester) with a CGPA of 3.75.",
+    year: "2025",
+  },
+  {
     title: "A-Level Academic Distinction",
     detail:
       "Achieved three A grades at A-level, awarded the Academic Distinction award (2024).",

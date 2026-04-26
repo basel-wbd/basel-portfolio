@@ -178,6 +178,19 @@ export const projects: Project[] = [
 		links: [],
 	},
 	{
+		title: "Implied Volatility Surface Plotter",
+		year: "2026",
+		status: "Completed",
+		problem:
+			"I wanted to dive into the world of quantitative finance, a first step project in that would've been to see whether I could retrieve implied volatility from a black-Scholes formula and plot it.",
+		solution:
+			"Built a Python based tool to compute implied volatility using the Black-Scholes model and visualize it as a 3D surface. Implemented numerical methods (Binary search/Bisection Method) to invert option prices and used plotting libraries to generate an interactive volatility surface for analysis.",
+		tools: ["Python", "numpy", "matplotlib", "Scipy"],
+		outcomes:
+			["Developed a deeper understanding of options pricing and volatility smiles/skews", "Implemented numerical root-finding for implied volatility", "Created a reusable visualization pipeline for financial data"],
+		links: ["https://github.com/basel-wbd/implied-volatility-surface.git"]
+	},
+	{
 		title: "RIT Dubai Timetable Optimizer",
 		year: "2026",
 		status: "Planned",

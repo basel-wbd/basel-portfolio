@@ -188,7 +188,7 @@ export const projects: Project[] = [
 		tools: ["Python", "numpy", "matplotlib", "Scipy"],
 		outcomes:
 			["Developed a deeper understanding of options pricing and volatility smiles/skews", "Implemented numerical root-finding for implied volatility", "Created a reusable visualization pipeline for financial data"],
-		links: ["https://github.com/basel-wbd/implied-volatility-surface.git"]
+		links: []
 	},
 	{
 		title: "RIT Dubai Timetable Optimizer",

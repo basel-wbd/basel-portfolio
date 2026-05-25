@@ -191,18 +191,6 @@ export const projects: Project[] = [
 		links: []
 	},
 	{
-		title: "RIT Dubai Timetable Optimizer",
-		year: "2026",
-		status: "Planned",
-		problem:
-			"Course scheduling at RIT Dubai involves many constraints (prerequisites, room capacity, student preferences). Manual scheduling is time-consuming and often suboptimal.",
-		solution:
-			"Plan to model the problem as a constraint satisfaction problem and experiment with heuristic solvers. Will validate against historical schedules.",
-		tools: ["Python", "OR-Tools (planned)", "Excel"],
-		outcomes: [],
-		links: [],
-	},
-	{
 		title: "MUN Finance Tracker",
 		year: "2025",
 		status: "In Progress",
@@ -211,18 +199,6 @@ export const projects: Project[] = [
 		solution:
 			"Designing a structured Google Sheets system with payment status tracking, automated balance calculations, and a shared read-only view for the committee head.",
 		tools: ["Google Sheets", "Google Forms", "Apps Script (planned)"],
-		outcomes: [],
-		links: [],
-	},
-	{
-		title: "Language Learning Spaced Repetition CLI",
-		year: "2026",
-		status: "Planned",
-		problem:
-			"Existing SRS apps don't let me fully control my German vocabulary decks or integrate with my own notes.",
-		solution:
-			"Plan to build a minimal CLI tool in Python (or Rust) that implements a simple SM-2 algorithm over plain-text card files.",
-		tools: ["Python", "Rust (planned)", "JSON"],
 		outcomes: [],
 		links: [],
 	},

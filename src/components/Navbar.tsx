@@ -36,7 +36,7 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="mx-auto w-full max-w-6xl px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Logo / name */}
         <a
           href="#"

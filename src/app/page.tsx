@@ -9,13 +9,15 @@ import { Achievements } from "@/components/sections/Achievements";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { Container } from "@/components/ui/Container";
 import { sections } from "../../content/siteData";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="max-w-3xl mx-auto px-6 pt-24 pb-32 space-y-32">
+      <main>
+        <Container className="pt-24 pb-32 space-y-32">
         {sections.hero && <Hero />}
         {sections.about && (
           <ScrollReveal>
@@ -52,6 +54,7 @@ export default function Home() {
             <Contact />
           </ScrollReveal>
         )}
+        </Container>
       </main>
       <Footer />
     </>

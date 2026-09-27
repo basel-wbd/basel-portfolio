@@ -37,9 +37,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/BrowserLogo.png" sizes="any" />
-      </head>
       <body>
         <Providers>{children}</Providers>
         <Analytics />

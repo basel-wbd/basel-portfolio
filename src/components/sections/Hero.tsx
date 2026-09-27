@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="pt-8 md:pt-16 min-h-[70vh] flex flex-col justify-center"
+      className="min-h-[calc(100svh-6rem)] flex flex-col justify-center"
     >
       {/* Optional headshot */}
       {meta.headshot && (

@@ -13,13 +13,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: `${meta.name} — ${meta.title}`,
-  description: `${meta.tagline} ${meta.subTagline}`,
+  description: meta.tagline,
   keywords: [
+    "Basel BaderEddin",
     "Industrial Engineering",
     "RIT Dubai",
-    "Basel BaderEddin",
-    "portfolio",
-    "process optimization",
+    "operations research",
+    "quantitative finance",
+    "systems engineering",
   ],
   openGraph: {
     title: `${meta.name} — ${meta.title}`,

@@ -10,17 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-body)", "sans-serif"],
-        display: ["var(--font-display)", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       colors: {
-        accent: {
-          DEFAULT: "#22c55e",
-          dim: "#16a34a",
-          muted: "#dcfce7",
-          "muted-dark": "#052e16",
-        },
+        accent: "var(--accent)",
       },
       animation: {
         "fade-up": "fadeUp 0.6s ease forwards",

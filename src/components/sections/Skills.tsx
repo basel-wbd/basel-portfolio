@@ -1,22 +1,23 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Chip } from "@/components/ui/Chip";
 import { skills } from "../../../content/siteData";
 
 export function Skills() {
   return (
     <section id="skills">
-      <SectionHeading label="01 — skills" title="What I bring." />
-      <div className="space-y-8">
+      <SectionHeading label="Capabilities" title="Skills." />
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 border-t border-[var(--border)] pt-10">
         {skills.map((group) => (
           <div key={group.category}>
-            <h3 className="text-xs font-mono uppercase tracking-widest text-[var(--text-muted)] mb-3">
+            <h3 className="text-xs uppercase tracking-[0.18em] text-[var(--text-muted)] mb-5">
               {group.category}
             </h3>
-            <div className="flex flex-wrap gap-2">
+            <ul className="space-y-2.5">
               {group.items.map((item) => (
-                <Chip key={item} label={item} />
+                <li key={item} className="text-base">
+                  {item}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))}
       </div>

@@ -5,44 +5,119 @@
 // ── Meta ──────────────────────────────────────────────────────
 export const meta = {
 	name: "Basel BaderEddin",
-	title: "Industrial Engineering Student",
-	tagline: "Systems thinker. Process optimizer. Perpetual learner.",
-	subTagline:
-		"Studying Industrial Engineering at RIT Dubai — with a love for math, languages, and building things that actually work.",
+	title: "Industrial Engineering · RIT Dubai",
+	tagline:
+		"Industrial engineering student working at the intersection of operations, finance, and systems.",
 	location: "Dubai, UAE",
 	email: "bb4541@rit.edu",
 	linkedin: "https://www.linkedin.com/in/basel-bader-eddin-a9bb02219/",
-	github: "https://github.com/basel-wbd", // ← paste GitHub URL here; leave empty to hide button
-	resumePdfPath: "/Basel CV.pdf", // ← drop your CV PDF in /public/resume.pdf
-	headshot: "", // ← paste image path e.g. "/headshot.jpg"; leave empty to hide
-	siteUrl: "https://baselbadereddin.dev", // ← for OG tags
-};
-
-// ── Theme ─────────────────────────────────────────────────────
-export const theme = {
-	accentMode: "green" as "neutral" | "green", // "neutral" = grays only
+	github: "https://github.com/basel-wbd", // leave empty to hide
+	resumePdfPath: "/Basel_BaderEddin_CV.pdf", // file lives in /public
+	siteUrl: "https://baselbadereddin.vercel.app", // for OG tags
 };
 
 // ── Section toggles ───────────────────────────────────────────
 export const sections = {
 	hero: true,
-	about: true,
+	highlights: true,
 	skills: true,
-	experience: true,
-	projects: true,
-	education: true,
-	achievements: true,
+	about: true,
 	contact: true,
 };
 
-// ── About ─────────────────────────────────────────────────────
-export const about = {
-	paragraphs: [
-		"I'm a first-year Industrial Engineering student at RIT Dubai, drawn to the discipline because it sits at the intersection of systems, people, and data. IE isn't about building machines — it's about making complex systems work better, and that kind of thinking shows up everywhere I look.",
-		"Outside of coursework I've worked as a chemistry tutoring assistant, helped coordinate finance for a Model UN conference, and spent more hours than I'll admit at a piano. I'm also learning German (B1 and climbing), and I find that studying a language is surprisingly good training for systems thinking.",
-		"I'm comfortable with Excel, Google Sheets, Python, C++, and HTML/CSS — and I treat every new tool as something to learn rather than something to fear. Currently exploring data analysis pipelines and process-improvement workflows.",
+// ── Hero ──────────────────────────────────────────────────────
+export const hero = {
+	eyebrow: "Industrial Engineering · RIT Dubai",
+	statement:
+		"I turn ambiguous problems into structured systems — managing real budgets, winning case competitions, and shipping work for paying clients.",
+	proof: ["CGPA 3.79", "Dean's List", "SAT 1550"],
+	facts: [
+		{ label: "Focus", value: "Operations research · Quantitative finance · Systems engineering · Consulting" },
+		{ label: "Currently", value: "Finance Director, RIT Dubai Student Government" },
+		{ label: "Based in", value: "Dubai, UAE" },
 	],
 };
+
+// ── Highlights (case studies) ─────────────────────────────────
+export interface Metric {
+	value: string;
+	label: string;
+}
+
+export interface CaseStudy {
+	title: string;
+	context: string; // org · period
+	metrics: Metric[];
+	problem: string;
+	action: string;
+	outcome: string;
+	tags: string[];
+	link?: { label: string; href: string };
+}
+
+export const caseStudies: CaseStudy[] = [
+	{
+		title: "Running a six-figure student government budget",
+		context: "Finance Director · RIT Dubai Student Government · 2026 – present",
+		metrics: [
+			{ value: "6-figure", label: "annual budget (AED)" },
+			{ value: "~30", label: "club treasurers" },
+		],
+		problem:
+			"Nearly 30 student clubs draw on a single annual budget. Allocations, approvals, and reporting have to be fair, fast, and able to stand up to scrutiny.",
+		action:
+			"I oversee the full budget cycle — allocations, approvals, and financial reporting — and coordinate the treasurers of every club. I built the tracking and reporting structures that everything now runs through.",
+		outcome:
+			"Club spending is traceable end-to-end, giving student government a transparent, auditable basis for decisions across the whole organisation.",
+		tags: ["Budgeting", "Financial reporting", "Stakeholder management"],
+	},
+	{
+		title: "Launching a web presence for a UAE travel business",
+		context: "Freelance engagement · Lucky Holiday Tourism",
+		metrics: [
+			{ value: "End-to-end", label: "scoping to launch" },
+			{ value: "Live", label: "in production" },
+		],
+		problem:
+			"Lucky Holiday Tourism, a UAE travel SME, needed a credible online presence that presents its packages clearly and turns visitors into enquiries.",
+		action:
+			"I ran the engagement solo: gathered requirements with the business, designed and built a complete landing page, and handled deployment.",
+		outcome:
+			"The site went live in July with a near-immediate turnaround from sign-off, and is in production today.",
+		tags: ["Client delivery", "Requirements", "Web development"],
+		link: { label: "luckyholidaytourism.com", href: "https://luckyholidaytourism.com" },
+	},
+	{
+		title: "Designing an ERP/CRM system — 1st place",
+		context: "Odoo ERP/CRM Case Competition · Team of 3 · Fall 2025",
+		metrics: [
+			{ value: "1st", label: "of six teams" },
+			{ value: "Freshman", label: "team lead" },
+		],
+		problem:
+			"A case-study company needed its sales and operations processes mapped onto a single ERP/CRM system.",
+		action:
+			"I led a team of three first-year students to analyse the company's processes, design an Odoo-based ERP/CRM solution, and present it to judges.",
+		outcome:
+			"Won first place against five teams made up mostly of upperclassmen.",
+		tags: ["Systems design", "Process mapping", "ERP/CRM"],
+	},
+	{
+		title: "Implied volatility surface plotter",
+		context: "Independent project · 2026",
+		metrics: [
+			{ value: "3D", label: "volatility surfaces" },
+			{ value: "Python", label: "NumPy · SciPy" },
+		],
+		problem:
+			"Option prices imply a volatility, but the Black-Scholes formula has no closed-form inverse — it has to be solved numerically.",
+		action:
+			"I built a Python tool that inverts Black-Scholes prices with bisection root-finding across strikes and maturities, then renders the result as a 3D surface.",
+		outcome:
+			"A reusable pipeline that makes volatility smiles and skews visible — and a working foundation for further options analysis.",
+		tags: ["Quantitative finance", "Numerical methods", "Python"],
+	},
+];
 
 // ── Skills ────────────────────────────────────────────────────
 export interface SkillGroup {
@@ -54,212 +129,59 @@ export const skills: SkillGroup[] = [
 	{
 		category: "Analytical",
 		items: [
-			"Systems thinking",
-			"Process optimization",
-			"Data-driven decisions",
-			"Problem decomposition",
+			"Problem structuring",
 			"Quantitative reasoning",
-		],
-	},
-	{
-		category: "Tools",
-		items: [
-			"Microsoft Excel",
-			"Google Sheets",
-			"MATLAB (basic)",
-			"Google Workspace",
+			"Process improvement",
+			"Budgeting & financial reporting",
 		],
 	},
 	{
 		category: "Programming",
-		items: ["Python", "C++", "HTML / CSS", "Rust (learning)"],
+		items: [
+			"Python — NumPy, SciPy, Pandas",
+			"C++",
+			"MATLAB",
+			"Rust",
+		],
 	},
 	{
-		category: "Leadership",
-		items: [
-			"Conference coordination",
-			"Stakeholder communication",
-			"Finance tracking",
-			"Team collaboration",
-		],
+		category: "Web",
+		items: ["Next.js", "Tailwind CSS", "HTML / CSS", "Vercel"],
 	},
 	{
 		category: "Languages",
-		items: ["English (fluent)", "German (B1)", "Arabic (Native)"],
+		items: ["Arabic — native", "English — fluent", "German — B1"],
 	},
 ];
 
-// ── Experience ────────────────────────────────────────────────
-export interface ExperienceEntry {
-	role: string;
-	org: string;
-	period: string;
-	location: string;
-	bullets: string[];
-}
-
-export const experience: ExperienceEntry[] = [
-	{
-		role: "Finance Coordinator",
-		org: "RITMUN (RIT Model United Nations)",
-		period: "Sep 2025 – Present",
-		location: "Dubai, UAE",
-		bullets: [
-			"Manage budgeting and financial tracking for a multi-committee MUN conference.",
-			"Coordinate payment collection and expense reconciliation using spreadsheets.",
-			"Liaise between the organizing committee and external stakeholders on financial matters.",
-			"Draft financial reports and ensure accurate record-keeping throughout the conference cycle.",
-		],
-	},
-	{
-		role: "Assistant to Chemistry Tutor",
-		org: "Dr. Nervana ElKhadragy",
-		period: "Aug 2024 – Present",
-		location: "Remote",
-		bullets: [
-			"Support one-on-one tutoring sessions by preparing practice materials and answer keys.",
-			"Track student progress using a custom-built Google Sheets workflow (see Projects).",
-			"Coordinate session scheduling and follow-up communication with students.",
-			"Assist in simplifying complex chemistry concepts for secondary-level learners.",
-		],
-	},
-];
-
-// ── Projects ──────────────────────────────────────────────────
-export type ProjectStatus =
-	| "Live"
-	| "In Progress"
-	| "Planned"
-	| "Completed";
-
-export interface ProjectLink {
-	label: string;
-	href: string;
-}
-
-export interface Project {
-	title: string;
-	year: string;
-	status: ProjectStatus;
-	problem: string;
-	solution: string;
-	tools: string[];
-	outcomes: string[];
-	links: ProjectLink[];
-}
-
-export const projects: Project[] = [
-	{
-		title: "Chemistry Progress Tracking System",
-		year: "2024",
-		status: "Live",
-		problem:
-			"Student progress across multiple tutoring sessions was tracked inconsistently, making it hard to identify gaps or measure improvement over time.",
-		solution:
-			"Built a structured Google Sheets workflow with per-student score logs, topic tagging, and auto-calculated trend indicators. Added a follow-up checklist to surface at-risk topics before each session.",
-		tools: ["Google Sheets", "Excel", "Google Forms"],
-		outcomes: [
-			"Reduced session-prep time by ~30% through automated summaries.",
-			"Gave the tutor a single-source view of every student's weak topics.",
-			"Adopted as the standard workflow for the tutoring practice.",
-		],
-		links: [],
-	},
-	{
-		title: "Personal Finance Dashboard",
-		year: "2025",
-		status: "In Progress",
-		problem:
-			"Wanted a clean, offline-capable way to track monthly spending without sharing data with a third-party app.",
-		solution:
-			"Building a local Python + CSV pipeline with a simple dashboard view. Exploring Pandas for trend analysis.",
-		tools: ["Python", "Pandas", "CSV", "Matplotlib"],
-		outcomes: [],
-		links: [],
-	},
-	{
-		title: "Implied Volatility Surface Plotter",
-		year: "2026",
-		status: "Completed",
-		problem:
-			"I wanted to dive into the world of quantitative finance, a first step project in that would've been to see whether I could retrieve implied volatility from a black-Scholes formula and plot it.",
-		solution:
-			"Built a Python based tool to compute implied volatility using the Black-Scholes model and visualize it as a 3D surface. Implemented numerical methods (Binary search/Bisection Method) to invert option prices and used plotting libraries to generate an interactive volatility surface for analysis.",
-		tools: ["Python", "numpy", "matplotlib", "Scipy"],
-		outcomes:
-			["Developed a deeper understanding of options pricing and volatility smiles/skews", "Implemented numerical root-finding for implied volatility", "Created a reusable visualization pipeline for financial data"],
-		links: []
-	},
-	{
-		title: "MUN Finance Tracker",
-		year: "2025",
-		status: "In Progress",
-		problem:
-			"RITMUN's financial tracking relied on informal spreadsheets with no audit trail or version control.",
-		solution:
-			"Designing a structured Google Sheets system with payment status tracking, automated balance calculations, and a shared read-only view for the committee head.",
-		tools: ["Google Sheets", "Google Forms", "Apps Script (planned)"],
-		outcomes: [],
-		links: [],
-	},
-];
+// ── About ─────────────────────────────────────────────────────
+export const about = {
+	paragraphs: [
+		"I'm a second-year Industrial Engineering student at RIT Dubai. The five-year B.S. includes a mandatory co-op year and an economics immersion — a combination of systems modelling, statistics, and economics that points directly at the work I want to do: operations research, quantitative finance, systems engineering, and consulting.",
+		"Outside the classroom I manage money and people. Alongside student government, I'm Finance Coordinator for RITMUN, and I've trained Model UN delegates and chaired the ILO committee (2025).",
+	],
+};
 
 // ── Education ─────────────────────────────────────────────────
-export interface EducationEntry {
-	degree: string;
-	institution: string;
-	location: string;
-	period: string;
-	gpa?: string;
-	coursework: string[];
-}
-
-export const education: EducationEntry[] = [
-	{
-		degree: "B.S. Industrial Engineering",
-		institution: "Rochester Institute of Technology (RIT Dubai)",
-		location: "Dubai, UAE",
-		period: "Expected May 2030",
-		coursework: [
-			"Engineering Analysis",
-			"Probability & Statistics for Engineers",
-			"Operations Research",
-			"Manufacturing Processes",
-			"Quality Control & Reliability",
-			"Human Factors Engineering",
-			"Supply Chain Management",
-			"Linear Algebra",
-			"Engineering Economics",
-			"Computer-Aided Design",
-		],
-	},
-];
-
-// ── Achievements ──────────────────────────────────────────────
-export interface Achievement {
-	title: string;
-	detail: string;
-	year: string;
-}
-
-export const achievements: Achievement[] = [
-	{
-		title: "Dean's List Award",
-		detail:
-			"Achieved Dean's List status in Fall 2025 semester (First semester) with a CGPA of 3.75.",
-		year: "2025",
-	},
-	{
-		title: "A-Level Academic Distinction",
-		detail:
-			"Achieved three A grades at A-level, awarded the Academic Distinction award (2024).",
-		year: "2024",
-	},
-];
+export const education = {
+	degree: "B.S. Industrial Engineering",
+	institution: "Rochester Institute of Technology — Dubai",
+	period: "Expected May 2030",
+	facts: [
+		{ label: "CGPA", value: "3.79 / 4.0" },
+		{ label: "Dean's List", value: "Both semesters, first year" },
+		{ label: "SAT", value: "1550" },
+	],
+	coursework: [
+		"Probability & Statistics",
+		"Calculus",
+		"Engineering Design",
+		"Programming for Engineers",
+	],
+};
 
 // ── Contact ───────────────────────────────────────────────────
 export const contact = {
-	heading: "Let's connect.",
-	body: "I'm always happy to talk engineering, side projects, or anything in between. The best way to reach me is by email.",
-	showMailtoForm: true, // set false to hide the mailto button
+	heading: "Let's talk.",
+	body: "I'm open to co-op and internship conversations in operations, finance, systems engineering, and consulting. Email is the fastest way to reach me.",
 };

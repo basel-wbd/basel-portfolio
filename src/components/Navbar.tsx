@@ -1,14 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Sun, Moon, Menu, X, Download } from "lucide-react";
 import { meta, sections } from "../../content/siteData";
 
 const navLinks = [
-  { label: "About", href: "#about", show: sections.about },
+  { label: "Work", href: "#work", show: sections.highlights },
   { label: "Skills", href: "#skills", show: sections.skills },
-  { label: "Experience", href: "#experience", show: sections.experience },
-  { label: "Projects", href: "#projects", show: sections.projects },
+  { label: "About", href: "#about", show: sections.about },
   { label: "Contact", href: "#contact", show: sections.contact },
 ].filter((l) => l.show);
 
@@ -36,19 +35,18 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="mx-auto w-full max-w-6xl px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Logo / name */}
         <a
           href="#"
-          className="font-display text-lg tracking-tight hover:opacity-70 transition-opacity"
+          className="text-sm font-semibold tracking-tight hover:opacity-70 transition-opacity"
           aria-label="Home"
         >
-          {meta.name.split(" ")[0]}
-          <span className="text-[var(--accent)] font-display">.</span>
+          {meta.name}
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -58,6 +56,16 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
+          {meta.resumePdfPath && (
+            <a
+              href={meta.resumePdfPath}
+              download
+              className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full border border-[var(--border)] hover:border-[var(--text)] transition-colors"
+            >
+              <Download size={14} />
+              CV
+            </a>
+          )}
           {mounted && (
             <button
               onClick={toggleTheme}

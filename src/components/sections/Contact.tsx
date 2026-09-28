@@ -1,42 +1,49 @@
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Mail, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { meta, contact } from "../../../content/siteData";
+
+const linkClass =
+  "group inline-flex items-center gap-1 text-sm font-medium hover:text-[var(--accent)] transition-colors";
 
 export function Contact() {
   return (
-    <section id="contact">
-      <SectionHeading label="06 — contact" title={contact.heading} />
-      <p className="text-base text-[var(--text-muted)] mb-8 leading-relaxed max-w-md">
+    <section id="contact" className="border-t border-[var(--border)] pt-16 md:pt-24">
+      <span className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--accent)] mb-4 block">
+        Contact
+      </span>
+      <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
+        {contact.heading}
+      </h2>
+      <p className="text-lg text-[var(--text-muted)] leading-relaxed max-w-xl mb-10">
         {contact.body}
       </p>
 
-      <div className="flex flex-wrap gap-4">
-        {contact.showMailtoForm && (
-          <a
-            href={`mailto:${meta.email}`}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--text)] text-[var(--bg)] text-sm font-medium hover:opacity-80 transition-opacity"
-          >
-            <Mail size={15} />
-            {meta.email}
+      <a
+        href={`mailto:${meta.email}`}
+        className="inline-block text-2xl md:text-4xl font-medium tracking-tight underline decoration-[var(--border)] decoration-2 underline-offset-8 hover:decoration-[var(--accent)] transition-colors mb-12 break-all"
+      >
+        {meta.email}
+      </a>
+
+      <div className="flex flex-wrap gap-x-8 gap-y-4">
+        {meta.linkedin && (
+          <a href={meta.linkedin} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            LinkedIn
+            <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         )}
-
-        {meta.linkedin && (
-          <a
-            href={meta.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--border)] text-sm font-medium hover:bg-[var(--bg-subtle)] transition-colors"
-          >
-            <ExternalLink size={15} />
-            LinkedIn
+        {meta.github && (
+          <a href={meta.github} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            GitHub
+            <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+        )}
+        {meta.resumePdfPath && (
+          <a href={meta.resumePdfPath} download className={linkClass}>
+            Download CV
+            <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         )}
       </div>
-
-      <p className="text-xs font-mono text-[var(--text-muted)] mt-6">
-        Based in {meta.location}. Response time: usually within 24 hours.
-      </p>
     </section>
   );
 }
